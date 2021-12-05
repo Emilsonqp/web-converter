@@ -67,7 +67,7 @@ class VistaTasks(Resource):
 
         file_list = file.filename.split('.')
         filename = f'{file_list[0]}-{int(time())}.{file_list[1]}'
-        path = f'src/files/{filename}'
+        path = f'/home/emilsonqp/flask_application/heroku/web-converter/converter/src/files/{filename}'
         user_id = User.query.filter_by(username=get_jwt_identity()).first().id
         new_task = Task(filename=filename, new_format=new_format, user_id=user_id, original_filename=file.filename)
         db.session.add(new_task)
