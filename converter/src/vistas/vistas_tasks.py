@@ -21,9 +21,9 @@ from kombu.utils.url import safequote
 aws_access_key = safequote("ASIAWRNPKSN4WDZCDCT3")
 aws_secret_key = safequote("kNiQ9l6B/DXmXs4JRJY07bpMGQ2QscN93HDnLKwH")
 broker_url = "sqs://{aws_access_key}:{aws_secret_key}@".format(
-    aws_access_key=aws_access_key, aws_secret_key=aws_secret_key,
+    aws_access_key=aws_access_key, aws_secret_key=aws_secret_key
 )
-celery = Celery(__name__, broker="{broker_url}sqs.us-east-1.amazonaws.com/449728648057/celery")
+celery = Celery(__name__, broker=f"{broker_url}sqs.us-east-1.amazonaws.com/449728648057/celery")
 
 recordings_bucket = 'recordingsbucket01'
 
