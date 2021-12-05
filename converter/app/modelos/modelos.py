@@ -3,7 +3,7 @@ from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from sqlalchemy import text, ForeignKey
 from sqlalchemy.orm import relationship
 import boto3
-from ..constantes import TaskStatus, S3CustomKeys
+from app.constantes.constantes import TaskStatus, S3CustomKeys
 
 
 db = SQLAlchemy()
