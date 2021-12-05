@@ -17,7 +17,7 @@ import os
 #                     backend='rpc://',
 #                     task_default_queue=f"{queue_name}")
 
-celery = Celery(__name__, broker="sqs://sqs.us-east-1.amazonaws.com/449728648057/celery")
+celery = Celery(__name__, broker="sqs://ASIAWRNPKSN4WDZCDCT3:kNiQ9l6B/DXmXs4JRJY07bpMGQ2QscN93HDnLKwH@sqs.us-east-1.amazonaws.com/449728648057/celery")
 
 recordings_bucket = 'recordingsbucket01'
 
