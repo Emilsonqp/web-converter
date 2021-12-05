@@ -20,7 +20,7 @@ from kombu.utils.url import safequote
 
 aws_access_key = safequote("ASIAWRNPKSN4WDZCDCT3")
 aws_secret_key = safequote("kNiQ9l6B/DXmXs4JRJY07bpMGQ2QscN93HDnLKwH")
-url_sqs = safequote("kNiQ9l6B/DXmXs4JRJY07bpMGQ2QscN93HDnLKwH")
+url_sqs = safequote("sqs.us-east-1.amazonaws.com/449728648057/celery")
 
 broker_url = "sqs://{aws_access_key}:{aws_secret_key}@{url_sqs}".format(
     aws_access_key=aws_access_key, aws_secret_key=aws_secret_key,
