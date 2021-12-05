@@ -28,10 +28,11 @@ def process_uploaded_task(task: dict):
         new_file_name = f'{file_list[0]}.{new_format}'
         print("pre conversion")
         client.download_file(recordings_bucket,f'src/files/{task["filename"]}', f'src/files/{task["filename"]}')
-        print("bien2")
+        print("bien1")
         new_path = f'src/files/{new_file_name}'
         print("bien2")
-        os.system(f'sudo ffmpeg -i src/files/{task["filename"]} {new_path}')
+        os.system(f'ffmpeg -i src/files/{task["filename"]} {new_path}')
+        print("bien3")
         client.upload_file(new_path,recordings_bucket,new_path)
         print("post conversion")
         task = Task.query.get(task['id'])
