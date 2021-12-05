@@ -2,13 +2,15 @@ import os
 
 from celery import Celery
 
-from src import create_app
+from server import create_app
 from ..constantes.constantes import TaskStatus
 
 from ..modelos import Task, db, User , S3Client
+
 from ..servicios.mail_service import send_mail_processed_file
 
 #celery_app = Celery(__name__, broker='redis://localhost:6379/0')
+
 celery_app = Celery(__name__, broker="sqs://sqs.us-east-1.amazonaws.com/449728648057/celery")
 recordings_bucket = 'recordingsbucket01'
 
