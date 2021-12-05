@@ -34,7 +34,8 @@ class S3Client:
     def __init__(self):
         self.client = boto3.client('s3', aws_access_key_id     = S3CustomKeys.AWS_ACCESS_KEY_ID.value,
                                          aws_secret_access_key = S3CustomKeys.AWS_SECRET_ACCESS_KEY.value,
-                                         aws_session_token     = S3CustomKeys.AWS_SESSION_TOKEN.value)
+                                         aws_session_token     = S3CustomKeys.AWS_SESSION_TOKEN.value,
+                                         region_name="us-east-1")
 
 
 
