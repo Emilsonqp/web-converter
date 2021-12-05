@@ -1,4 +1,4 @@
-from server import create_app
+from app import create_app
 from app.modelos import db
 from flask_restful import Api
 from app.vistas import VistaLogIn, VistaSignIn, VistaLoadFile, VistaTask, VistaFile
