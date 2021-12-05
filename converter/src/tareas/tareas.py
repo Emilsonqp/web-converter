@@ -9,7 +9,7 @@ from ..modelos import Task, db, User , S3Client
 from ..servicios.mail_service import send_mail_processed_file
 
 #celery_app = Celery(__name__, broker='redis://localhost:6379/0')
-celery_app = Celery(__name__, broker="sqs://ASIAWRNPKSN4WDZCDCT3:kNiQ9l6B/DXmXs4JRJY07bpMGQ2QscN93HDnLKwH@sqs.us-east-1.amazonaws.com/449728648057/celery")
+celery_app = Celery(__name__, broker="sqs://sqs.us-east-1.amazonaws.com/449728648057/celery")
 recordings_bucket = 'recordingsbucket01'
 
 @celery_app.task(name="process_uploaded_task")
