@@ -1,11 +1,11 @@
-from app import create_app
-from app.modelos import db
+from src import create_app
+from src.modelos import db
 from flask_restful import Api
-from app.vistas import VistaLogIn, VistaSignIn, VistaLoadFile, VistaTask, VistaFile
+from src.vistas import VistaLogIn, VistaSignIn, VistaLoadFile, VistaTask, VistaFile
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
 
-from app.vistas.vistas_tasks import VistaTasks
+from src.vistas.vistas_tasks import VistaTasks
 
 app = create_app('default')
 app_context = app.app_context()

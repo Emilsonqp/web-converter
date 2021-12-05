@@ -1,4 +1,4 @@
-from app.modelos.modelos import Task, TaskSchema
+from src.modelos.modelos import Task, TaskSchema
 import bcrypt
 from flask_restful import Resource
 from ..constantes.constantes import AudioFormat, AudioContentType, TaskStatus
