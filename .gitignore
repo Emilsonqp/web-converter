@@ -2,5 +2,5 @@
 .DS_Store
 __pycache__
 env
-!converter/app/files/__init__.py
-converter/app/files/*
+!converter/src/files/__init__.py
+converter/src/files/*
