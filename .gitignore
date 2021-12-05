@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+__pycache__
+env
+!converter/app/files/__init__.py
+converter/app/files/*
