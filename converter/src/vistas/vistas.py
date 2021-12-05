@@ -29,7 +29,7 @@ class VistaSignIn(Resource):
         if password1 != password2:
             return {"message": "Passwords must match in order to Sign-In"}, 403
 
-        password1 = bcrypt.hashpw((password1).encode('utf-8'), bcrypt.gensalt())
+        ##password1 = bcrypt.hashpw((password1).encode('utf-8'), bcrypt.gensalt())
         exist_email = User.query.filter_by(email=email).first() is not None
         if exist_email:
             return {"message": "This Email match an existent account.Try again!"}, 403
@@ -59,8 +59,8 @@ class VistaLogIn(Resource):
         if user is None:
             return "The username do not exist", 404
 
-        if not bcrypt.checkpw(u_password1.encode('utf8'), user.password1):
-            return "Incorrect password"
+        ##if not bcrypt.checkpw(u_password1.encode('utf8'), user.password1):
+            ##return "Incorrect password"
 
         else:
             access_token = create_access_token(identity=user.username)
