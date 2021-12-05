@@ -2,7 +2,7 @@ import os
 
 from celery import Celery
 
-from server import create_app
+from src import create_app
 from ..constantes.constantes import TaskStatus
 
 from ..modelos import Task, db, User , S3Client
