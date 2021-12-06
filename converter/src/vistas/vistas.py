@@ -132,6 +132,7 @@ class VistaFile(Resource):
             tasks = db.session.query(Task).filter(Task.original_filename == filename)
             client.download_file(recordings_bucket,f'src/files/{tasks[0].filename}', f'src/files/{tasks[0].filename}')
             ROOT_DIR = os.path.dirname(os.path.abspath("ssh_cola.pem"))
+            print("ruta root:" +ROOT_DIR)
             return send_from_directory("/home/ubuntu/web-converter/converter/app/files/", tasks[0].filename, as_attachment=True)
         except Exception as e:
             return {"message": "the file to recover not found " + tasks[0].filename}, 404
