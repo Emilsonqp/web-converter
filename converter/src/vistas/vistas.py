@@ -131,10 +131,7 @@ class VistaFile(Resource):
             client = S3Client().client
             tasks = db.session.query(Task).filter(Task.original_filename == filename)
             client.download_file(recordings_bucket,f'src/files/{tasks[0].filename}', f'src/files/{tasks[0].filename}')
-            ROOT_DIR = os.path.dirname(os.path.abspath("ssh_cola.pem"))
-            dir = os.path.dirname(os.path.abspath())
-            print("ruta root:" +ROOT_DIR)
-            print("ruta file:" +dir)
+            print(os.path.expanduser('~'))
             return send_from_directory("/app/web-converter/converter/src/files/", tasks[0].filename, as_attachment=True)
         except Exception as e:
             return {"message": "the file to recover not found " + tasks[0].filename}, 404
