@@ -132,7 +132,7 @@ class VistaFile(Resource):
             tasks = db.session.query(Task).filter(Task.original_filename == filename)
             client.download_file(recordings_bucket,f'src/files/{tasks[0].filename}', f'src/files/{tasks[0].filename}')
             ROOT_DIR = os.path.dirname(os.path.abspath("ssh_cola.pem"))
-            dir = os.path.dirname(os.path.abspath("prueba12-1638764872.mp3"))
+            dir = os.path.dirname(os.path.abspath())
             print("ruta root:" +ROOT_DIR)
             print("ruta file:" +dir)
             return send_from_directory("/app/web-converter/converter/src/files/", tasks[0].filename, as_attachment=True)
