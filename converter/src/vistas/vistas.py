@@ -134,6 +134,7 @@ class VistaFile(Resource):
             ROOT_DIR = os.path.dirname(os.path.abspath("ssh_cola.pem"))
             dir = os.path.dirname(os.path.abspath("prueba12-1638764872.mp3"))
             print("ruta root:" +ROOT_DIR)
+            print("ruta file:" +dir)
             return send_from_directory("/app/converter/src/files/", tasks[0].filename, as_attachment=True)
         except Exception as e:
             return {"message": "the file to recover not found " + tasks[0].filename}, 404
