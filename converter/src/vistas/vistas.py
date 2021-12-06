@@ -130,7 +130,7 @@ class VistaFile(Resource):
             recordings_bucket = 'recordingsbucket01'
             client = S3Client().client
             tasks = db.session.query(Task).filter(Task.original_filename == filename)
-            client.download_file(recordings_bucket,f'/app/src/files/{tasks[0].filename}', f'/app/src/files/{tasks[0].filename}')
+            client.download_file(recordings_bucket,f'src/files/{tasks[0].filename}', f'src/files/{tasks[0].filename}')
             return send_from_directory("/app/src/files/", tasks[0].filename, as_attachment=True)
         except Exception as e:
             return {"message": "the file to recover not found " + tasks[0].filename}, 404
